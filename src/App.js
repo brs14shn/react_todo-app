@@ -20,11 +20,18 @@ const handleAddTodo=()=>{
 
 //? DELETETE
 const deleteTodo=(id)=>{
-  const filteredItems=allTodos.filter((todoItem,index)=>{
-    return index!==id
-  })
+  if(todo !==0){
+    const filteredItems=allTodos.filter((todoItem,index)=>{
+      return index!==id
+    })
+  
+   setallTodos(filteredItems)
 
- setallTodos(filteredItems)
+  }
+  else{
+    alert("Silinecek task bulunamadı")
+  }
+  
 }
 
 
@@ -76,13 +83,11 @@ useEffect(() => {
           <ul className='list-group'>
             {allTodos.map((todoItem,index)=>{
               return(
-
                 <Todos key={index}
                 id={index}
                 todoItem={todoItem}
                 deleteTodo={deleteTodo}
                 />
-
               )
             })}
             
