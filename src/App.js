@@ -1,7 +1,32 @@
+import { useState } from 'react';
 import './App.css';
 import Todos from './components/Todos';
 
 function App() {
+
+const [todo,setTodo] =useState("")
+
+// console.log(todo);
+//? Add Button
+const handleAddTodo=()=>{
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   return (
     <div className="container fluid">
       <div className='row'>
@@ -12,9 +37,13 @@ function App() {
           name='add-todo'
           className='form-control shadow-none text-capitalize'
           placeholder='Enter new Task' 
-          // value=""
+          value={todo}
+          onChange={(e)=>setTodo(e.target.value)}
           />
-          <button className='btn btn-warning px-3 fw-bold shadow-none'>Add</button>
+          <button 
+          className='btn btn-warning px-3 fw-bold shadow-none'
+          onClick={handleAddTodo}
+          >Add</button>
           
           </div>
           <ul className='list-group'>
