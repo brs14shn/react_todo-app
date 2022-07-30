@@ -56,7 +56,7 @@ useEffect(() => {
   return (
     <div className="container fluid">
       <div className='row'>
-        <div className='col-sm-6 mx-auto bg-white rounded-4 p-3 mt-5'>
+        <div className='col-sm-6 mx-auto bg-info rounded-4 p-3 mt-5'>
           <h2 className='text-center mb-4'>My Todos</h2>
         <div className='d-flex gap-4 mb-4'>
           <input type="text"
