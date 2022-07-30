@@ -69,7 +69,7 @@ useEffect(() => {
           >Add</button>
           
           </div>
-          <ul className='list-group'>
+          <ul className='list-group '>
             {allTodos.map((todoItem,index)=>{
               return(
                 <Todos key={index}
