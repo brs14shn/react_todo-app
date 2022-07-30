@@ -20,40 +20,29 @@ const handleAddTodo=()=>{
 
 //? DELETETE
 const deleteTodo=(id)=>{
-  if(todo !==0){
     const filteredItems=allTodos.filter((todoItem,index)=>{
       return index!==id
     })
   
    setallTodos(filteredItems)
-
-  }
-  else{
-    alert("Silinecek task bulunamadı")
-  }
-  
 }
 
+//? EDİTED TODO
+const editedTodo=(id)=>{
+  const filteredItem=allTodos.filter((todoItem,index)=>{
+    return index===id
+  })
 
-
-
-
+ setTodo(filteredItem)
+ deleteTodo(id)
+ 
+}
 
 
 
 useEffect(() => {
   localStorage.setItem("Tasks",JSON.stringify(allTodos))
 }, [allTodos])
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -87,6 +76,7 @@ useEffect(() => {
                 id={index}
                 todoItem={todoItem}
                 deleteTodo={deleteTodo}
+                editedTodo={editedTodo}
                 />
               )
             })}
