@@ -6,16 +6,31 @@ function App() {
 
 const [todo,setTodo] =useState("")
 
-const [allTodos,setallTodos] =useState(JSON.parse(localStorage.getItem("Tasks")))
+const [allTodos,setallTodos] =useState(JSON.parse(localStorage.getItem("Tasks")) || [])
 
-// console.log(todo);
+console.log(allTodos);
 //? Add Button
 const handleAddTodo=()=>{
   if(todo !==""){
-   setTodo({...allTodos, todo})
+   setallTodos([...allTodos,todo])
   };
   setTodo("")  
 }
+
+
+//? DELETETE
+const deleteTodo=(id)=>{
+  const filteredItems=allTodos.filter((todoItem,index)=>{
+    return index!==id
+  })
+
+ setallTodos(filteredItems)
+}
+
+
+
+
+
 
 
 
@@ -41,7 +56,7 @@ useEffect(() => {
   return (
     <div className="container fluid">
       <div className='row'>
-        <div className='col'>
+        <div className='col-sm-6 mx-auto bg-white rounded-4 p-3 mt-5'>
           <h2 className='text-center mb-4'>My Todos</h2>
         <div className='d-flex gap-4 mb-4'>
           <input type="text"
@@ -59,7 +74,19 @@ useEffect(() => {
           
           </div>
           <ul className='list-group'>
-            <Todos/>
+            {allTodos.map((todoItem,index)=>{
+              return(
+
+                <Todos key={index}
+                id={index}
+                todoItem={todoItem}
+                deleteTodo={deleteTodo}
+                />
+
+              )
+            })}
+            
+           
           </ul>
         </div>
       </div>
