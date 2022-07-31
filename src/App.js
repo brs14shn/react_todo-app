@@ -38,6 +38,13 @@ const editedTodo=(id)=>{
  
 }
 
+const modalTutorial=()=>{
+  allTodos()
+  handleAddTodo()
+}
+
+console.log(modalTutorial);
+
 
 
 useEffect(() => {
@@ -77,6 +84,7 @@ useEffect(() => {
                 todoItem={todoItem}
                 deleteTodo={deleteTodo}
                 editedTodo={editedTodo}
+                modalTutorial={modalTutorial}
                 />
               )
             })}
