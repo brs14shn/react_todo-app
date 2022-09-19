@@ -3,7 +3,7 @@ import { FaEdit } from "react-icons/fa";
 import { AiFillDelete } from "react-icons/ai";
 import ModalsComp from "./ModalsComp";
 
-const Todos = ({ todoItem, deleteTodo, id, editedTodo, modalTutorial }) => {
+const Todos = ({ todoItem, deleteTodo, id, editedTodo, modalTutorial,handleAddTodo }) => {
   const [edited, setEdited] = useState("");
   return (
     <div className="d-flex justify-content-between align-items-center my-2">
@@ -23,7 +23,7 @@ const Todos = ({ todoItem, deleteTodo, id, editedTodo, modalTutorial }) => {
           <AiFillDelete size={22} />
         </button>
       </div>
-      <ModalsComp edited={edited} modalTutorial={modalTutorial} />
+      <ModalsComp edited={edited} modalTutorial={modalTutorial}  handleAddTodo={handleAddTodo} />
     </div>
   );
 };

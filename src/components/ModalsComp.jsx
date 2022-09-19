@@ -6,6 +6,7 @@ const ModalsComp = ({ edited, modalTutorial }) => {
 
   const handleSave = () => {
     modalTutorial();
+   
     setTodo("");
   };
 

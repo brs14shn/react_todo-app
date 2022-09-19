@@ -85,6 +85,7 @@ useEffect(() => {
                 deleteTodo={deleteTodo}
                 editedTodo={editedTodo}
                 modalTutorial={modalTutorial}
+                handleAddTodo={handleAddTodo}
                 />
               )
             })}
